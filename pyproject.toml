@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "psse2excel"
+dynamic = ["version"]
+description = "Read PSS/E raw files (v33, v34, v35) without psspy and export them to Excel or CSV, one table per equipment type"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "Hui Zhang" }]
+keywords = ["PSS/E", "PSSE", "raw file", "power flow", "power system", "Excel", "CSV"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = [
+    "pandas",
+    "xlsxwriter",
+]
+
+[project.urls]
+Homepage = "https://github.com/austin-hz/psse2excel"
+Issues = "https://github.com/austin-hz/psse2excel/issues"
+
+[project.optional-dependencies]
+# progress bar while parsing
+progress = ["tqdm"]
+# what the tests in tests/ need
+test = ["openpyxl", "pytest"]
+
+[project.scripts]
+psse2excel = "psse2excel.cli:main"
+
+[tool.setuptools]
+# Only the code is installed: not testcases/, baseline/ or tests/
+packages = ["psse2excel"]
+
+[tool.setuptools.dynamic]
+version = { attr = "psse2excel.__version__" }

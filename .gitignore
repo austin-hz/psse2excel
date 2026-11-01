@@ -1,0 +1,9 @@
+# psse2excel output, regression test scratch output and parser log
+output/
+tests/output/
+psse_parser.log
+__pycache__/
+# package build output
+build/
+dist/
+*.egg-info/

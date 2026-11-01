@@ -1,0 +1,7 @@
+# Source archives (sdist) hold the code, README, LICENSE and requirements only.
+include LICENSE
+# The raw test cases and baseline workbooks stay in the repository.
+prune testcases
+prune baseline
+prune tests
+global-exclude *.raw *.RAW *.xlsx *.log

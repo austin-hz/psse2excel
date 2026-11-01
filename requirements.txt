@@ -1,0 +1,7 @@
+pandas
+numpy
+xlsxwriter
+# optional: progress bar while parsing
+tqdm
+# only for the tests
+openpyxl
